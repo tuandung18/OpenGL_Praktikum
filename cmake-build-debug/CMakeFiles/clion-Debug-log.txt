@@ -1,16 +1,4 @@
 "C:\Program Files\JetBrains\CLion 2023.1.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2023.1.2/bin/ninja/win/x64/ninja.exe" -G Ninja -S "D:\Studium Informatik Hda\VS\OpenGL_Praktikum" -B "D:\Studium Informatik Hda\VS\OpenGL_Praktikum\cmake-build-debug"
--- The C compiler identification is GNU 11.2.0
--- The CXX compiler identification is GNU 11.2.0
--- Detecting C compiler ABI info
--- Detecting C compiler ABI info - done
--- Check for working C compiler: C:/Program Files/JetBrains/CLion 2023.1.2/bin/mingw/bin/gcc.exe - skipped
--- Detecting C compile features
--- Detecting C compile features - done
--- Detecting CXX compiler ABI info
--- Detecting CXX compiler ABI info - done
--- Check for working CXX compiler: C:/Program Files/JetBrains/CLion 2023.1.2/bin/mingw/bin/g++.exe - skipped
--- Detecting CXX compile features
--- Detecting CXX compile features - done
 -- GLM is a header only library, no need to build it. Set the option GLM_TEST_ENABLE with ON to build and run the test bench
 GLM: GCC - GNU compiler
 CMake Deprecation Warning at libs/glfw-3.2.1/CMakeLists.txt:10 (cmake_policy):
@@ -23,22 +11,8 @@ CMake Deprecation Warning at libs/glfw-3.2.1/CMakeLists.txt:10 (cmake_policy):
   behavior and not rely on setting a policy to OLD.
 
 
--- Performing Test CMAKE_HAVE_LIBC_PTHREAD
--- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
--- Found Threads: TRUE  
 -- Could NOT find Vulkan (missing: VULKAN_LIBRARY VULKAN_INCLUDE_DIR) 
--- Looking for dinput.h
--- Looking for dinput.h - found
--- Looking for xinput.h
--- Looking for xinput.h - found
--- Performing Test _GLFW_HAS_DEP
--- Performing Test _GLFW_HAS_DEP - Success
--- Performing Test _GLFW_HAS_ASLR
--- Performing Test _GLFW_HAS_ASLR - Success
--- Performing Test _GLFW_HAS_64ASLR
--- Performing Test _GLFW_HAS_64ASLR - Success
 -- Using Win32 for window creation
--- Found OpenGL: opengl32   
 -- Configuring done
 -- Generating done
 -- Build files have been written to: D:/Studium Informatik Hda/VS/OpenGL_Praktikum/cmake-build-debug

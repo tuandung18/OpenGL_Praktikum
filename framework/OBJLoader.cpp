@@ -182,9 +182,9 @@ OBJMesh OBJLoader::parseMesh(DataCache & cache, std::ifstream & stream, bool cal
 		mesh.atts.push_back(VertexAttribute{3, GL_FLOAT, sizeof(Vertex), offsetof(Vertex, normal)});
 		mesh.atts.push_back(VertexAttribute{3, GL_FLOAT, sizeof(Vertex), offsetof(Vertex, tangent)});
 
-		std::unordered_map<VertexDef, size_t, VertexDef::hash, VertexDef::equal_to> meshvertset; //collect distinct vertices
+		std::unordered_map<VertexDef, size_t, VertexDef::hash, VertexDef::equal_to> meshvertset; //collect distinct cubeVert
 
-		//later create actual vertices out of these and put them into the mesh
+		//later create actual cubeVert out of these and put them into the mesh
 		std::vector<VertexDef> meshverts; //for tracking order of insertion		
 		std::vector<Index> meshindices;	//Vertex index of one of the Vertex defs above
 
@@ -474,7 +474,7 @@ void OBJLoader::recalculateTangents(OBJMesh & mesh)
 			//calculate and average tangents and bitangents just as we did when calculating the normals
 			for (size_t i = 0; i < mesh.indices.size(); i += 3)
 			{
-				//3 vertices of a triangle
+				//3 cubeVert of a triangle
 				glm::vec3 v1 = mesh.vertices[mesh.indices[i]].position;
 				glm::vec3 v2 = mesh.vertices[mesh.indices[i + 1]].position;
 				glm::vec3 v3 = mesh.vertices[mesh.indices[i + 2]].position;

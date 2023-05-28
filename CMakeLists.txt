@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.0)
 project(OpenGL_Praktikum)
 
-set(SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp")
+set(SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp" src/Game/cube.h src/Game/haus.h src/Game/Lee.h)
 set(INCLUDES "${CMAKE_CURRENT_SOURCE_DIR}/src")
 
 ##-------------------------------add your source files here-------------------------------------------------------------

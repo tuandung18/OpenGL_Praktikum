@@ -4,6 +4,7 @@
 #include <ShaderProgram.h>
 #include <memory>
 #include <AssetManager.h>
+#include "../SceneElements/Transform.h"
 
 class Scene
 {
@@ -31,7 +32,14 @@ private:
 	OpenGLWindow* m_window;
 	AssetManager m_assets;
     ShaderProgram* m_shader;
+    int cubeIndSize;
     GLuint vaoID, vboID,iboID;
+    Transform* T1, *T2, *T3;
+    Transform* BODY, *HEAD, *SHOULDERLEFT, *SHOULDERRIGHT, *HANDLEFT, *HANDRIGHT, *LEGLEFT, *LEGRIGHT;
+    //view matrix
+    glm::mat4 viewMatrix;
+    //projection matrix
+    glm::mat4 projectionMatrix;
 
 };
 

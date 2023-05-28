@@ -286,7 +286,7 @@ private:
 	//parse f flags and call parseFace
 	static OBJMesh parseMesh(DataCache& cache ,std::ifstream& stream, bool calcnormals = false, bool calctangents = false);
 
-	//parse face and generate vertices and indices for the mesh
+	//parse face and generate cubeVert and indices for the mesh
 	static Face parseFace(std::ifstream& stream);
 
 	//create Vertex from "v/vt/vn" strings
