@@ -217,7 +217,26 @@ void Scene::render(float dt)
 
 void Scene::update(float dt)
 {
-
+    //Robot movement
+    if (m_window->getInput().getKeyState(Key::W) == KeyState::Pressed) {
+        T1->translate(glm::vec3(0, 0, -0.1 * dt));
+    }
+    if (m_window->getInput().getKeyState(Key::S) == KeyState::Pressed) {
+        T1->translate(glm::vec3(0, 0, 0.1 * dt));
+    }
+    if (m_window->getInput().getKeyState(Key::A) == KeyState::Pressed) {
+        T1->translate(glm::vec3(-0.1 * dt, 0, 0));
+    }
+    if (m_window->getInput().getKeyState(Key::D) == KeyState::Pressed) {
+        T1->translate(glm::vec3(0.1 * dt, 0, 0));
+    }
+    if (m_window->getInput().getKeyState(Key::Q) == KeyState::Pressed) {
+        T1->rotateAroundPoint(glm::vec3(0, 0, 0), glm::vec3(0, 0.2 * dt, 0));
+    }
+    if (m_window->getInput().getKeyState(Key::E) == KeyState::Pressed) {
+        T1->rotateAroundPoint(glm::vec3(0, 0, 0), glm::vec3(0, -0.2 * dt, 0));
+    }
+    //Robot movement end
 }
 
 OpenGLWindow * Scene::getWindow()
@@ -232,6 +251,18 @@ void Scene::onKey(Key key, Action action, Modifier modifier)
 
 void Scene::onMouseMove(MousePosition mouseposition)
 {
+
+    auto newPosition = glm::vec2(mouseposition.X, mouseposition.Y);
+    auto oldPosition = glm::vec2(mouseposition.oldX, mouseposition.oldY);
+    auto direction = (newPosition - oldPosition);
+    //new view matrix and perspective matrix in shader
+    viewMatrix = glm::rotate(viewMatrix, direction.x * 0.01f, glm::vec3(0, 1, 0));
+    viewMatrix = glm::rotate(viewMatrix, direction.y * 0.01f, glm::vec3(1, 0, 0));
+    m_shader->setUniform("vm", viewMatrix, false);
+
+
+
+
 
 }
 
